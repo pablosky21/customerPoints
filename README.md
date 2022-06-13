@@ -41,4 +41,8 @@ this is the expected result the program take the current date and look 3 months 
 The endpoint is GET and this the url localhost:8080/getUserPoints
 
 
+![Screenshot_2](https://user-images.githubusercontent.com/20580488/173267326-b0571076-5554-4ac7-bfd8-f1365fb2d0af.png)
+
+
+
 
