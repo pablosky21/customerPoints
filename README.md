@@ -13,6 +13,12 @@ INSERT INTO transaction_user(id, created_date, amount_paid, customerid) VALUES (
 INSERT INTO transaction_user(id, created_date, amount_paid, customerid) VALUES (5, '2022-05-07 19:09:32', 8000, 2);
 INSERT INTO transaction_user(id, created_date, amount_paid, customerid) VALUES (6, '2022-05-07 19:09:32', 8000, 1);
 ```
+![Screenshot_3](https://user-images.githubusercontent.com/20580488/173268116-3c23ee6d-8013-4506-bf24-585f44e15170.png)
+
+
+![Screenshot_4](https://user-images.githubusercontent.com/20580488/173268173-53868cab-d4fc-4ec2-9fd2-50384c986729.png)
+
+
 
 this is the expected result the program take the current date and look 3 months back for get the records
 
@@ -39,6 +45,10 @@ this is the expected result the program take the current date and look 3 months 
 ]
 ```
 The endpoint is GET and this the url localhost:8080/getUserPoints
+
+
+![Screenshot_2](https://user-images.githubusercontent.com/20580488/173267326-b0571076-5554-4ac7-bfd8-f1365fb2d0af.png)
+
 
 
 
