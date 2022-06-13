@@ -9,8 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
 
 
+@Setter
+@Getter
 @Entity
 @Table(name ="customer")
 public class Customer {
@@ -19,7 +23,11 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String name;
+    private String firts_name;
+    
+    private String last_name;
+    
+    private String soc_number;
     
     @OneToMany(mappedBy = "customer")
     private List<TransactionUser> transactions;

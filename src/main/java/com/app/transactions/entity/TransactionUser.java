@@ -1,6 +1,5 @@
 package com.app.transactions.entity;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -11,22 +10,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
 
 
+@Setter
+@Getter
 @Entity
-@Table(name ="transaction")
+@Table(name ="transaction_user")
 public class TransactionUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private LocalDateTime createdDate;
+    private LocalDateTime created_date;
     
-    private BigDecimal amountPaid;
+    private Integer amount_paid;
     
     
     @ManyToOne
-    @JoinColumn(name = "customer")
+    @JoinColumn(name = "customerid")
     private Customer customer;
 }
