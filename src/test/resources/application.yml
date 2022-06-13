@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: CustomerTransactionsPoints
+  cache:
+    type: none
+  profiles:
+    active: test
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true 
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop 
+    properties.hibernate:
+      enable_lazy_load_no_trans: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE;
+    username: sa
+    password: null
+    platform: h2
+server:
+  port: 8080
