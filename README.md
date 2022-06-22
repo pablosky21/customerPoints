@@ -1,6 +1,20 @@
 # customerPoints
 restapi return the points of the client by buy in retail
 
+Customer table dataset 
+
+![customer](https://user-images.githubusercontent.com/20580488/174944667-9980ff58-d194-4137-90ea-d1266624524d.png)
+
+Transaccion table dataset 
+
+![transaccion](https://user-images.githubusercontent.com/20580488/174944783-430f51ec-4ee0-44aa-8b24-66042d5f1e6b.png)
+
+monthly total per customer, and 3 months summary
+![resultados](https://user-images.githubusercontent.com/20580488/174945100-2bd62a9e-6b02-4dde-acff-b5246367f759.png)
+
+
+
+
 For install the program you need to run the command "mvn clean install"
 
 For run test run the next command "mvn test"
