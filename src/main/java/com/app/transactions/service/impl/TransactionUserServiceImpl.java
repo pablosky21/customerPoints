@@ -4,14 +4,15 @@ import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.transactions.dto.TransactionUserDto;
 import com.app.transactions.dto.UserInfoPoints;
 import com.app.transactions.repository.TransactionUserRepository;
-import com.app.transactions.repository.TransactionUserRepository.Event;
 import com.app.transactions.service.TransactionUserService;
 
 @Service
@@ -25,13 +26,15 @@ public class TransactionUserServiceImpl implements TransactionUserService {
 
         List<UserInfoPoints> userInfoPointsList = new ArrayList<>();
         try {
-            List<Event> listTransactionUserDto = transactionUserRepository.getUserTransaccion();
-
+            List<TransactionUserDto> listTransactionUserDto = transactionUserRepository.userDetails();
+            if(listTransactionUserDto.isEmpty()) {
+                throw new NoSuchElementException("No elements found");
+            }
             listTransactionUserDto.forEach((tran) -> {
                 UserInfoPoints userInfoPoints = new UserInfoPoints();
                 userInfoPoints.setFirtsName(tran.getFirst_name());
                 userInfoPoints.setLastName(tran.getLast_name());
-                userInfoPoints.setSocSecNumber(tran.getSoc_Number());
+                userInfoPoints.setSocSecNumber(tran.getSoc_number());
                 int firstMonthPoints = setPointsMonth(Optional.of(tran.getFirtsmonth()));
                 String firstMonthText = getMonth(Optional.of(tran.getFirtsmonth()));
                 userInfoPoints.setFirstMonthPoints(firstMonthText + "-" + Integer.toString(firstMonthPoints));

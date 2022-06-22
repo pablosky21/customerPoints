@@ -29,6 +29,7 @@ public class UserInfoPointsController {
         try {
             return new ResponseEntity<>(transactionUserService.getUserPoints(), HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace();
             logger.error("UserInfoPointsController-----", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
