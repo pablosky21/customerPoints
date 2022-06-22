@@ -1,6 +1,10 @@
 # customerPoints
 restapi return the points of the client by buy in retail
 
+For install the program you need to run the command "mvn clean install"
+
+For run test run the next command "mvn test"
+
 this api work with embedded database H2 this is the data set for the program
 
 ```
